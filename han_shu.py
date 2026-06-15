@@ -96,11 +96,19 @@ print(b)#返回的是zip object迭代器本身
 print(list(b))#要把它转换为元组或者列表类型
 
 #2、map函数
-#将一个列表中的每个元素都转换成某种数据类型
+#map(func,list)将传入的函数变量func作用到list每个变量当中，并将结果组成新的迭代器返回
+#将ld当中的整数变成浮点型数据
 ld=[1,2,3,4]
 c=map(float,ld)
 print(c)#返回的是map object迭代器本身
 print(list(c))#要把它转换为列表类型，这个函数本身返回的是新列表
+#将lf当中的数据变成数据的平方返回 
+lf=[1,2,3,4,5]
+def funct1(x):
+    return x**2
+d=map(funct1,lf)
+print(d)
+print(list(d))
 
 #3、filter函数
 #用于过滤序列中不符合条件的元素，返回由符合条件元素组成的新列表
@@ -112,6 +120,16 @@ def ou_shu(i):
         return i
 v=filter(ou_shu,range(1,11))
 print(list(v))#返回1-10的偶数序列列表
+
+#4、reduce函数
+#reduce(func，lst)，其中func必须有两个参数，每次func计算的结果继续和序列的下一个元素做累计计算
+#计算列表序列中各个数字的累加和
+import functools
+lis1=[1,2,3,4]
+def sum1(a,b):
+    return a+b
+x=functools.reduce(sum1,lis1)
+#reduce在functools模块中，想要使用reduce必须调用functools模块
 
 
 
