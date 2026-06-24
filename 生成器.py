@@ -33,6 +33,10 @@ print(xx.__next__())#2
 print(xx.__next__())#3
 
 for i in range(50):
-    print(xx.__next__())#4-53  因为3上面已经取了
+    print(xx.__next__())#4-53  因为0-3上面已经取了
+
+for item in xx:
+    if item<=100:
+        print(item)#54-100 因为0-53上面已经取了
 
 '''生成器表达式和推导式我放在一起了'''
