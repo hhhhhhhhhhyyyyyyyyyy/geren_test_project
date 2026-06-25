@@ -13,9 +13,16 @@ class mimi():
     def maomao(cls):#参数为class
         print(f'我的猫猫另一个名字叫{cls.name}')
 
+    @property
+    def maomao4(self):
+        self.name='小猫咪'
+        print(f'我的猫猫第三个名字叫{self.name}')
+
+
 d=mimi('汤圆')
 d.maomao3()
 d.maomao()
+d.maomao4  #通过property以普通属性形式访问普通方法
 
 '''
 类方法特点：
@@ -28,4 +35,6 @@ d.maomao()
 因为只能访问类属性和类方法，所以可以在对象创建之前，如果需要完成一些功能，这些功能可以放进类方法
 '''
 
-        
+
+
+
